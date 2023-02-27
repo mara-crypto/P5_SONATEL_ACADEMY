@@ -8,26 +8,26 @@ from os import system
 choice = menu()
 
 while choice != '4' :
-
+    print("choix")
     if choice == '1' :
         print(traiter_donnees_avec_csv())
-        choix = menu()
+        choice = menu()
 
     elif choice== '2' :
         print(traiter_donnees_avec_json())
-        choix = menu()
+        choice = menu()
         
     elif choice == '3' :
         print(traiter_donnees_avec_xml())
-        choix = menu()
+        choice = menu()
+    elif choice =='4' :
+        print("sortir")
+        
 
 
     else :
-        print("choix pas bon")
-        choix = menu()
+        print("choix pas bon !!!!!")
+        choice = menu()
 
 
 
-if choice =='4' :
-    system("rm Donnees_Invalides_json.json")
-    exit

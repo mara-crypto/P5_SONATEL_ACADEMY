@@ -2,6 +2,7 @@ import csv
 import xml.etree.ElementTree as ET
 import json
 from traitement import *
+from lxml import etree
 
 def traiter_donnees_avec_xml() :
 
@@ -33,7 +34,7 @@ def traiter_donnees_avec_xml() :
         f.write("\n".join(convert_row(row) for row in donne))
         f.write("\n </Eleves>")
 
-    from lxml import etree
+    
     eleve = {}
     dico = {}
     data = {}
