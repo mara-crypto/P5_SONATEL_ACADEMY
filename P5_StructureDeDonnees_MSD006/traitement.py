@@ -376,5 +376,6 @@ def menu():
     print("║{:^9}║{:^15}║".format("4", "Quitter"))
     print("╚═════════╩═══════════════╝")
 
-    choice = input("entre votre choix: ")
+    
+    return input("entre votre choix: ")
 

@@ -5,7 +5,7 @@
 # from Fonction import calcule_moy
 # from Fonction import afficher_menu
 # from Fonction import afficher_info
-from Fonction import *
+from Mes_fonctions import *
 
 #Mon example
 #etudiants=[{'Nom':'Diop','Prenom':'Modou','Telephone':'783719445','Classe':'Dev','Devoir':12,'Projet':13,'Exam':13,'Moyenne':12.5}]
