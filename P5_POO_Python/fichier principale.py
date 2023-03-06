@@ -313,10 +313,5 @@ class principale :
     fichier = Fichier()
     m = fichier.lire_fichier('Donnees_Projet_Python_DataC5.csv')
     # fichier.afficher_info()
-    dv,di=fichier.separation_des_donnees_en_valide_et_invalide(m)
-
-    # print(len(dv))
-    # print(len(di))
-
-    print(dv)
+    donnees_valides,donnees_invalides = fichier.separation_des_donnees_en_valide_et_invalide(m)
 
