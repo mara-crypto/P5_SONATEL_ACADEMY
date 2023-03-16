@@ -28,6 +28,7 @@ font-style: italic;
 	border:3px solid black;
 	background:red;
     font-size: 4em;
+	font-weight: bold;
     text-align: center;
 }
 
@@ -35,40 +36,45 @@ font-style: italic;
 .square1 {
 	display:flex;
 	align-items:center;
-	width:1500px;
-	height:75px;
+	width:1750px;
+	height:20px;
 	border:1px solid black;
 	background:orange;
-
-
-
+	margin-left:1.5em;
+	padding:30px;
 }
 
 
 .square2 {
 	display:flex;
 	align-items:center;
-	width:1500px;
-	height:50px;
+	width:1750px;
+	height:0px;
 	border:1px solid black;
 	background:orange;
-
-
-}
-
-
-.text-italic {
+	margin-left:3em;
+	padding:30px;
 	font-style:italic;
 }
 
-.margeee {
-	margin-left:3em,
-}
+
+.texte::first-letter {
+	font-size: 40px;
+	color: red;
+	font-weight: bold;
+  }
+  
 
 
+  body {
+	background-image: url("image\ du\ tp4.jpeg");
+	background-repeat: repeat;
+  }
+  
 
 
-
-
-
+  .gradient {
+	background-image: linear-gradient(to right, #ff8a00, #da1b60);
+  }
+  
 
