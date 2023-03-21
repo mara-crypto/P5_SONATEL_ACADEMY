@@ -1,0 +1,12 @@
+.ligne-horizontale{
+    border:none;
+    border-top:1px solid black;
+    margin:10px 0;
+    }
+    
+    
+    .souligne{
+    text-decoration: underline;
+    color: black
+    }
+    
