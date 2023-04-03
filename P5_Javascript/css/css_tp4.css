@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#zone{
+    width: 23%;
+    padding: 20px ;
+    background-color: rgb(47, 0, 90);
+    margin-top: 100px;
+    border: 15px solid rgb(90, 0, 173) ;
+    flex-direction: column;
+    display: flex;
+}
+
+button{
+    background-color: rgb(226, 198, 43);
+    color:  rgb(47, 0, 90);
+    font-size: 25px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 2%;
+    margin-top: 10%;
+}
+
+
+label{
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#motDePasse{
+    width: 95%;
+    font-size: 30px;
+    font-weight: 2px;
+    color: white;
+    background-color:  rgb(90, 0, 173) ;
+    border: none;
+    height: 40px;
+    padding: 3%
+}
+
+#bouton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

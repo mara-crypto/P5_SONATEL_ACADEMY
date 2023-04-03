@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css_tp4.css">
+    <title>TP 4</title>
+</head>
+<body>
+    <div id="zone">
+        <input id="motDePasse" type="text"><br><br>
+        <div>
+            <div style="float:left">
+                <label for="longueur du mot password">Longueur du mot Password</label><br><br>
+                <label for="Lettre Maj">Contient des Lettres Majuscules</label><br><br>
+                <label for="Lettre Min">Contient des Lettres Minuscules</label><br><br>
+                <label for="Caracteres Speciaux">Contient des Caracteres Speciaux</label><br><br>
+                <label for="nombre">Contient des Nomnres</label><br><br>
+            </div>
+            <div style="float: right;">
+                <input type="number" id="number" max="20" min="15"><br><br>
+                <input type="checkbox" id="letMaj"><br><br>
+                <input type="checkbox" id="letMin"><br><br>
+                <input type="checkbox" id="nombre"><br><br>
+                <input type="checkbox" id="speciaux">
+            </div>
+        </div>  
+        <div id="bouton"><button id="generer">Generer Le Mot de Passe</button></div>
+        
+    </div>
+
+    <script src="../script/js_tp4.js"></script>
+    
+</body>
+</html>

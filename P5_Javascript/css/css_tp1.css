@@ -1,0 +1,63 @@
+ 
+ 
+ .rectangle{
+    width: 80%;
+    background-color: rgba(3, 234, 255, 0.781);
+    margin: 10%;  
+    display: flex;
+    flex-direction: column; 
+    padding: 1em;
+
+}
+
+.but {
+   margin-left: auto;
+}
+
+.rectangle > button{
+    
+    background-color: yellowgreen;
+    color: white;
+    width:100px;
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+
+
+
+}
+
+#composant-contenaire{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.composant{
+
+    height: 500px;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    margin-left: 100px;
+}
+
+.enTete{
+    height: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: yellowgreen;
+    padding-right: 10px;
+
+}
+
+.textarea{
+    width: 300px;
+    height: 470px;
+
+
+}

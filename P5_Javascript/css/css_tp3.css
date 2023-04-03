@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#zone{
+    background-color: rgba(128, 128, 128, 0.267);
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+}
+
+#zoneBlanc {
+    width: 80%;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#notificationSuccess,
+#notificationDanger,
+#notificationWarning,
+#notificationInfo {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 20%;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#notificationSuccess {
+    background-color: rgb(3, 161, 3);
+}
+
+#notificationDanger {
+    background-color: rgb(173, 0, 0);
+}
+
+#notificationWarning {
+    background-color: rgb(255, 194, 25);
+}
+
+#notificationInfo {
+    background-color: rgb(85, 125, 255);
+}

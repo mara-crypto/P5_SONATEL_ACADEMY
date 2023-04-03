@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+#deuxDivBoutons {
+    width: 60%;
+    background-color: rgba(128, 128, 128, 0.212);
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+
+}
+
+#divGauche {
+    width: 25%;
+    height: 250px;
+    padding: 3%;
+    box-shadow: 3px 3px 3px gray;
+    background-color: white;
+    
+}
+
+#divDroit{
+    width: 25%;
+    height: 250px;
+    padding: 3%;
+    box-shadow: 3px 3px 3px gray;
+    background-color: rgb(255, 255, 255);
+
+}
+
+
+
+.selection {
+    width: 80%;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(0, 68, 255);
+    color: white;
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
+#boutons{
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.carre{
+    width: 50px;
+    height: 35px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: blue;
+
+}
+.carre:hover {
+    background-color: lightskyblue;
+  }
+
+.carre:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* 
+#deuxDivBoutons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  #divGauche, #divDroit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+  }
+  
+  #divGauche p, #divDroit p {
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .selected {
+    background-color: blue;
+    color: white;
+  }
+  
+  #boutons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carre {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .carre:hover {
+    background-color: lightgray;
+  }
+   */

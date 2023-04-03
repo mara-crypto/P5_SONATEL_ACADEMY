@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/css_tp5.css">
+    <title>TP 5 Jeu de Question Reponse</title> 
+</head>
+<body>
+    <div id="serie1">
+        <h3>Quel est le Meilleur Language de Programmation en 2022</h3>
+        <ol>
+            <li><input type="radio" name="q1" value="1" data-reponseCorrect="false"> Java</li>
+            <li><input type="radio" name="q1" value="2" data-reponseCorrect="false"> C</li>
+            <li><input type="radio" name="q1" value="3" data-reponseCorrect="false">Python</li>
+            <li><input type="radio" name="q1" value="4" data-reponseCorrect="true">JavaScript</li>
+        </ol>
+        <button id="suivant1" disabled>Suivant</button>
+    </div>
+
+    <div id="serie2">
+        <h3>Quel mot-clé est utilisé pour déclarer une fonction en JavaScript ?</h3>
+            <ol>
+                <li><input type="radio" name="q2" value="1" data-reponseCorrect="false">def</li>
+                <li><input type="radio" name="q2" value="2" data-reponseCorrect="false">fun</li>
+                <li><input type="radio" name="q2" value="3" data-reponseCorrect="true">function</li>
+                <li><input type="radio" name="q2" value="4" data-reponseCorrect="false">fn</li>
+            </ol>
+        <button id="suivant2" disabled>Suivant</button>
+    </div>
+
+    <div id="serie3">
+        <h3>Quelle méthode de l'objet Math de JavaScript retourne la valeur maximale entre deux nombres ?</h3>
+            <ol>
+                <li><input type="radio" name="q3" value="1" data-reponseCorrect="true">max()</li>
+                <li><input type="radio" name="q3" value="2" data-reponseCorrect="false">min()</li>
+                <li><input type="radio" name="q3" value="3" data-reponseCorrect="false">ceil()</li>
+                <li><input type="radio" name="q3" value="4" data-reponseCorrect="false">floor()</li>
+            </ol>
+        <button id="suivant3" disabled>Suivant</button>
+    </div>
+
+    <div id="serie4">
+        <h3>Comment peut-on accéder à l'élément d'indice 3 d'un tableau en JavaScript ?</h3>
+            <ol>
+                <li><input type="radio" name="q4" value="1" data-reponseCorrect="true">tableau[3]</li>
+                <li><input type="radio" name="q4" value="2" data-reponseCorrect="false">ableau(3)</li>
+                <li><input type="radio" name="q4" value="3" data-reponseCorrect="false">tableau.3</li>
+                <li><input type="radio" name="q4" value="4" data-reponseCorrect="false">tableau{3}</li>
+            </ol>
+        
+        <button id="suivant4" disabled>Suivant</button>
+    </div>
+
+    <div id="serie5">
+        <h3>Quelle méthode de l'objet String de JavaScript permet de remplacer une sous-chaîne par une autre dans une chaîne de caractères ?</h3>
+            <ol>
+                <li><input type="radio" name="q5" value="1" data-reponseCorrect="true">replace()</li>
+                <li><input type="radio" name="q5" value="2" data-reponseCorrect="false">substring()</li>
+                <li><input type="radio" name="q5" value="3" data-reponseCorrect="false">slice()</li>
+                <li><input type="radio" name="q5" value="4" data-reponseCorrect="false">split()</li>
+            </ol>
+        <button id="suivant5" disabled>Suivant</button>   
+    </div>
+
+    <div id="serie6">
+        <h3>Quel est le résultat de l'expression suivante en JavaScript : 2 + 2 + "2" ?</h3>
+            <ol>
+                <li><input type="radio" name="q6" value="1" data-reponseCorrect="true">"42"</li>
+                <li><input type="radio" name="q6" value="2" data-reponseCorrect="false">22</li>
+                <li><input type="radio" name="q6" value="3" data-reponseCorrect="false">4</li>
+                <li><input type="radio" name="q6" value="4" data-reponseCorrect="false">"2+2+2"</li>
+            </ol>  
+        <button id="suivant6" disabled>Suivant</button>
+    </div>
+    <div id="resultat">
+        <p id="messageScore"></p>
+        <button id="rejouer">Rejouer</button>
+    </div>
+   
+
+
+
+    
+    <script src="../script/js_tp5.js"></script>
+</body>
+</html>
