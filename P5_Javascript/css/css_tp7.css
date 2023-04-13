@@ -1,4 +1,106 @@
 body{
-    background-color: rgb(51, 51, 137);
+    background-color:rgb(45,49,93);
+    display: flex;
+    flex-direction: column;
 }
 
+.recherche{
+    width: 100%;
+    height: 70px;
+    border: 2px;
+    margin-top: -10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(87,91,139);
+;
+}
+
+
+button{
+    width: 20%;
+    height: 40px;
+    float: right;
+    background-color: rgb(87,91,139);;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 20px;
+    margin-right: 1%;
+    font-size:large;
+    color: rgb(255, 255, 255);
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.458);
+
+}
+
+
+input{
+    width: 100% ;
+    height: 40px;
+    float: right;
+    background-color: rgb(87,91,139);;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 20px;
+    margin-right: 1%;
+    font-size:large;
+    color: rgb(255, 255, 255);
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.458);
+
+}
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+}
+
+.movie{
+    margin-top: 5%;
+    position: relative;
+    width: 15%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.image{
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.movie-info{
+    width: 90%;
+    height: 150px;
+    margin-top: -5px;
+    padding: 5%;
+    background-color:rgb(87,91,139);
+    color: white;
+}
+
+.description {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    padding: 10%;
+    width: 80%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 70%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+.movie:hover .description {
+  opacity: 1;
+  
+
+}
+
+.movie:hover .image {
+  opacity: 0.8;
+  bottom:0;
+}
+
+#classDiv {
+    width: 100%;
+}

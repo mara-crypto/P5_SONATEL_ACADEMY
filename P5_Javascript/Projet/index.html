@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="zone">
+        <aside id="gauche">
+            <input type="text" name="recherche" id="recherche">
+            <div id="EnseiSalClassMod">
+                <div class="classEnseiSalClassMod" id="enseignant">
+                    <div class="iconetNombre">
+                        <div id="iconEnseign"><i class='bx bxl-microsoft-teams' style='color:#fdf0f0'  ></i></div>
+                        <div id="nombre"></div>
+                    </div>
+                    <div class="nomEtPlus">
+                        <h3>Enseign</h3>
+                        <p>+</p>
+                    </div>
+                </div> 
+                <div class="classEnseiSalClassMod" id="salle">
+                    <div class="iconetNombre">
+                        <div id="iconSalle"><i class='bx bxs-home-circle' style='color:#fff8f8'  ></i></DIv>
+                    </div>
+                    <div class="nomEtPlus">
+                        <h3>Salles</h3>
+                        <p>+</p>
+                    </div>
+                </div>
+                <div class="classEnseiSalClassMod" id="classe">
+                    <div class="iconetNombre">
+                        <div id="iconClasse"><i class='bx bxs-user' style='color:#fbf8f8'  ></i></div>
+                    </div>
+                    <div class="nomEtPlus">
+                        <h3>Classes</h3>
+                        <p>+</p>
+                    </div>
+                </div>
+                <div class="classEnseiSalClassMod" id="module">
+                    <div class="iconetNombre">
+                        <div id="iconModule"><i class='bx bxs-notepad' style='color:#ffffff'  ></i></div>
+                    </div>
+                    <div class="nomEtPlus">
+                        <h3>Modules</h3>
+                        <p>+</p>
+                    </div>
+                </div>
+
+            </div>
+            <select name="listeDeroulant" id="listeDeroulant"></select>
+        </aside>
+        <section id="droite">
+            <header>
+                <div id="planingEtBouton">
+                    <div id="planing">
+                        <h1>Planning :</h1>
+                        <h1 id="nomPlaning"></h1>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                </div>
+            </header>
+            <div id="zoneHeure">
+                <ol>
+                    <li>8H</li>
+                    <li>9H</li>
+                    <li>10H</li>
+                    <li>11H</li>
+                    <li>12H</li>
+                    <li>13H</li>
+                    <li>14H</li>
+                    <li>15H</li>
+                    <li>16H</li>
+                    <li>17H</li>
+                </ol>
+            </div>
+            <div id="zonetableau">
+                <div id="jours">
+                    <li class="jour">LUNDI</li>
+                    <li class="jour">MARDI</li>
+                    <li class="jour">MERCREDI</li>
+                    <li class="jour">JEUDI</li>
+                    <li class="jour">VENDREDI</li>
+                    <li class="jour">SAMEDI</li>
+                </div>
+                <div id="affichePlaning">
+                    <li class="planing" id="element1"></li>
+                    <li class="planing" id="element2"></li>
+                    <li class="planing" id="element3"></li>
+                    <li class="planing" id="element4"></li>
+                    <li class="planing" id="element5"></li>
+                    <li class="planing" id="element6"></li>
+
+                </div>
+                
+            </div>
+        </section>
+    </div>  
+    <script src="index.js"></script>  
+</body>
+</html>
