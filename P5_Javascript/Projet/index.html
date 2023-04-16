@@ -59,8 +59,7 @@
             <header>
                 <div id="planingEtBouton">
                     <div id="planing">
-                        <h1>Planning :</h1>
-                        <h1 id="nomPlaning"></h1>
+                        <h1 id="nomPlaning">Planning :</h1>
                     </div>
                     <label class="switch">
                         <input type="checkbox">
@@ -84,12 +83,12 @@
             </div>
             <div id="zonetableau">
                 <div id="jours">
-                    <li class="jour">LUNDI</li>
-                    <li class="jour">MARDI</li>
-                    <li class="jour">MERCREDI</li>
-                    <li class="jour">JEUDI</li>
-                    <li class="jour">VENDREDI</li>
-                    <li class="jour">SAMEDI</li>
+                    <li class="jour">LUNDI <button id="ajouterDansLundi">+</button></li>
+                    <li class="jour">MARDI <button id="ajouterDansMardi">+</button></li>
+                    <li class="jour">MERCREDI <button id="ajouterDansMercredi">+</button></li>
+                    <li class="jour">JEUDI <button id="ajouterDansJeudi">+</button></li>
+                    <li class="jour">VENDREDI <button id="ajouterDansVendredi">+</button></li>
+                    <li class="jour">SAMEDI <button id="ajouterDansSamedi">+</button></li>
                 </div>
                 <div id="affichePlaning">
                     <li class="planing" id="element1"></li>
@@ -102,6 +101,7 @@
                 </div>
                 
             </div>
+            <div id="zoneformulaire"></div>
         </section>
     </div>  
     <script src="index.js"></script>  

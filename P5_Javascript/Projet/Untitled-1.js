@@ -167,7 +167,54 @@ function recuperationNom(tableau){
 }
 
 
+// function planningSelonEnseignant(id){
+    
+//     const objets = cours.filter(nomenseignant => nomenseignant.Enseign === id )
+//     // console.log(objets)
+    
+//    objets.forEach(objet => {
+//     const Module = modules.find(nomModule => nomModule.id === objet.Module).nom ;
+//     const Classe = classes.find(nomClasse => nomClasse.id === objet.Classe).nom ;
+//     const Salle = salles.find(nomSalle => nomSalle.id ===  objet.Salle).nom ;
+//     const HeureDebut = objet.HeureDebut ;
+//     const HeureFin = objet.HeureFin ;
+//     const jour = objet.jour;
+//     // console.log(jour)
 
+//     const duree = HeureFin - HeureDebut;
+//     const marge = HeureDebut - 8
+
+//     jours.forEach(elementJour =>{
+//         if (elementJour == jours[jour-1]){
+//             let horair = document.createElement("div");
+//             horair.innerHTML = "";
+
+//             horair.innerHTML += `<p>${Classe}</p>`;
+//             horair.innerHTML += `<p>${Module}</p>`;
+//             horair.innerHTML +=  `<p>${Salle}</p>`;
+
+//             elementJour.appendChild(horair);
+          
+
+//             horair.style.marginLeft = `${marge*10}%`;
+//             horair.style.width = `${duree*10}%`;
+//             horair.style.height = "110px";
+//             horair.style.display = "flex";
+//             horair.style.backgroundColor = "red"
+//             horair.style.alignItems = "center";
+//             horair.style.textAlign = "center";
+//             horair.style.justifyContent = "center";
+//             horair.style.flexDirection = "column";
+//             horair.style.fontSize = "15px";
+//             horair.style.color = "white";
+//             // p.style.marginTop = "-20px"
+//             // p.style.marginBottom = "-20px"
+         
+           
+//         }
+//     })
+//    })
+// }
 
 function planning(id, cours){
     if (enseignants.find(nomEnseign => nomEnseign.id === id)){
@@ -204,7 +251,10 @@ function planning(id, cours){
                 if (elementJour == jours[jour-1]){
                     horair.innerHTML = "";
                     horair.innerHTML += `<p>${Classe}<br>${Module}<br>${Salle}</p>`;
+                    // horair.innerHTML += `<p>${Module}</p>`;
+                    // horair.innerHTML +=  `<p>${Salle}</p>`;
                     elementJour.appendChild(horair);
+                    console.log("top");
                 }
             })
         }
@@ -213,6 +263,8 @@ function planning(id, cours){
                 if (elementJour == jours[jour-1]){
                     horair.innerHTML = "";
                     horair.innerHTML += `<p>${Enseign}<br>${Module}<br>${Salle}</p>`;
+                    // horair.innerHTML += `<p>${Module}</p>`;
+                    // horair.innerHTML +=  `<p>${Salle}</p>`;
                     elementJour.appendChild(horair);           
                 }
             })
@@ -222,6 +274,8 @@ function planning(id, cours){
                 if (elementJour == jours[jour-1]){
                     horair.innerHTML = "";
                     horair.innerHTML += `<p>${Enseign}<br>${Classe}<br>${Salle}</p>`;
+                    // horair.innerHTML += `<p>${Classe}</p>`;
+                    // horair.innerHTML +=  `<p>${Salle}</p>`;
                     elementJour.appendChild(horair);           
                 }
             })
@@ -231,6 +285,8 @@ function planning(id, cours){
                 if (elementJour == jours[jour-1]){
                     horair.innerHTML = "";
                     horair.innerHTML += `<p>${Enseign}<br><br>${Module}<br><br>${Classe}</p>`;
+                    // horair.innerHTML += `<p>${Module}</p>`;
+                    // horair.innerHTML +=  `<p>${Classe}</p>`;
                     elementJour.appendChild(horair);           
                 }
             })
@@ -264,10 +320,25 @@ function planning(id, cours){
         horair.style.flexDirection = "column";
         horair.style.fontSize = "15px";
         horair.style.color = "white";
-       
+        // p.style.marginTop = "-20px"
+        // p.style.marginBottom = "-20px"
     })
 }
 
+
+
+// let horaire2 = document.createElement("div")
+// horaire2.id = "horaire2";
+
+// horaire2.classList.add("horaire");
+
+// let horaire1 = document.createElement("div")
+// horaire1.id = "horaire1";
+// horaire1.classList.add("horaire");
+
+// let horaire3 = document.createElement("div")
+// horaire3.id = "horaire3";
+// horaire3.classList.add("horaire");
 
 
 const zoneformulaire = document.getElementById("zoneformulaire");
@@ -301,21 +372,27 @@ annuler.innerHTML = "Annuler";
 annuler.style.height = "30px"
 footer.appendChild(annuler)
 
-function formulaire(identification, indice, valeur){
+function formulaire(identification, indice){
     tabLabbel.forEach(valeurLabel =>{
-        const label = document.createElement("label");
-        label.id= "label"
-        let select = document.createElement("select");
-        select.id = "select"
         if (valeurLabel === "Enseignant" &&  valeurLabel !=identification){
-           
+            const label = document.createElement("label");
+            label.id= "label"
             label.innerHTML = valeurLabel
-           
+            const select = document.createElement("select");
+            select.id = "select"
             creationlisteDeroulantFormulaire(enseignants, select)
             coteLabel.appendChild(label)
             coteSelect.appendChild(select);
 
-           
+            select.addEventListener('change', function() {
+                const option = select.options[select.selectedIndex];
+                const item = {
+                  id: option.value,
+                  nom: option.text
+                };
+                console.log("enseignant item")
+                localStorage.setItem('Enseign', JSON.stringify(item));
+              });
             
         }
         if (valeurLabel === "Module" &&  valeurLabel !=identification){
@@ -413,18 +490,6 @@ function formulaire(identification, indice, valeur){
                 localStorage.setItem('HeureFin', JSON.stringify(item));
               });
         }
-        if (enseignants.find(nomEnseign => nomEnseign.id === valeur)){
-            const nomEnseign = enseignants.find(nomEnseign => nomEnseign.id === valeur).nom ;
-            const idEnseign = enseignants.find(nomEnseign => nomEnseign.id === valeur).id ;
-
-                const item = {
-                id: idEnseign,
-                nom: nomEnseign
-                };
-                console.log("enseignant item")
-                localStorage.setItem('Enseign', JSON.stringify(item));
-        }
-
         localStorage.setItem('Jour', JSON.stringify(indice));
 
     })
@@ -440,7 +505,9 @@ function creationlisteDeroulantFormulaire(tableau, select) {
     });
 }
 
-function afficherFormulaire(identification, valeur){
+
+
+function afficherFormulaire(identification){
     for ( i = 0; i < tabBoutonPlusDansJour.length; i++) {
         tabBoutonPlusDansJour[i].addEventListener("click", ()=>{
             coteLabel.innerHTML = ""
@@ -449,83 +516,129 @@ function afficherFormulaire(identification, valeur){
             let  indice = i + 1;
             indice = indice.toString();
 
-            formulaire(identification, indice, valeur)
+            formulaire(identification, indice)
            
         })
         
     }
 
+    // tabBoutonPlusDansJour.forEach(boutonPlus =>{
+    //     boutonPlus.addEventListener("click", ()=>{
+    //         coteLabel.innerHTML = ""
+    //         coteSelect.innerHTML = ""
+    //         zoneformulaire.style.display = "block"
+    //         formulaire(identification)
+    //         return console.log(tabBoutonPlusDansJour.selectedIndex);
+    //     })
+    // })
  }
+// afficherFormulaire("Enseignant")
 
-listeDeroulant.addEventListener("change", (event) => {
-    const valeur = event.target.value
-    lundi.innerHTML = ""
-    mardi.innerHTML = ""
-    mercredi.innerHTML = ""
-    jeudi.innerHTML = ""
-    vendredi.innerHTML = ""
-    samedi.innerHTML = ""
-    coteLabel.innerHTML = ""
-    coteSelect.innerHTML = ""
-    zoneformulaire.style.display = "none"; 
-    planning(valeur, cours)
 
-    if (enseignants.find(monobjet => monobjet.id === valeur)){
-        const nomValeur = enseignants.find(monobjet => monobjet.id === valeur).nom
-        document.getElementById("nomPlaning").textContent = "Planning : "+ nomValeur
-        const identification = "Enseignant"
-        afficherFormulaire(identification, valeur)
-    }
-    if (classes.find(monobjet => monobjet.id === valeur)){
-        const identification = "Classe"
-        const nomValeur = classes.find(monobjet => monobjet.id === valeur).nom
-        document.getElementById("nomPlaning").textContent = "Planning : "+ nomValeur
-        afficherFormulaire(identification, valeur)
-    }
-    if (modules.find(monobjet => monobjet.id === valeur)){
-        const identification = "Module"
-        afficherFormulaire(identification, valeur)
-    }
-    if (salles.find(monobjet => monobjet.id === valeur)){
-        const identification = "Salle"
-        afficherFormulaire(identification, valeur)
-    }
 
-    ajouter.addEventListener("click", () =>{  
-        zoneformulaire.style.display = "none";  
-    
-        coteLabel.innerHTML = ""
-        coteSelect.innerHTML = ""  
-        let enseignant = JSON.parse(localStorage.getItem('Enseign'));
-        let module = JSON.parse(localStorage.getItem('Module'));
-        let salle = JSON.parse(localStorage.getItem('Salle'));
-        let classe = JSON.parse(localStorage.getItem('Classe'));
-        let heureDebut = JSON.parse(localStorage.getItem('HeureDebut'));
-        let heureFin = JSON.parse(localStorage.getItem('HeureFin'));
-        let indice = JSON.parse(localStorage.getItem('Jour'));
-        let cour = {
-                    Enseign: enseignant.id,
-                    Module: module.id,
-                    Salle: salle.id,
-                    Classe: classe.id,
-                    HeureDebut: heureDebut.nom,
-                    HeureFin: heureFin.nom,
-                    jour : indice};
-        cours.push(cour)
-        console.log(valeur);
+// function creationlisteDeroul(){
+    listeDeroulant.addEventListener("change", (event) => {
+        const valeur = event.target.value
         lundi.innerHTML = ""
         mardi.innerHTML = ""
         mercredi.innerHTML = ""
         jeudi.innerHTML = ""
         vendredi.innerHTML = ""
         samedi.innerHTML = ""
-        cour = {}
+        coteLabel.innerHTML = ""
+        coteSelect.innerHTML = ""
+        zoneformulaire.style.display = "none"; 
         planning(valeur, cours)
-        
 
-        
-    })
-        
-})
+        if (enseignants.find(monobjet => monobjet.id === valeur)){
+            const nomValeur = enseignants.find(monobjet => monobjet.id === valeur).nom
+            document.getElementById("nomPlaning").textContent = "Planning : "+ nomValeur
+            const identification = "Enseignant"
+            afficherFormulaire(identification)
+        }
+        if (classes.find(monobjet => monobjet.id === valeur)){
+            const identification = "Classe"
+            const nomValeur = classes.find(monobjet => monobjet.id === valeur).nom
+            document.getElementById("nomPlaning").textContent = "Planning : "+ nomValeur
+            afficherFormulaire(identification)
+        }
+        if (modules.find(monobjet => monobjet.id === valeur)){
+            const identification = "Module"
+            afficherFormulaire(identification)
+        }
+        if (salles.find(monobjet => monobjet.id === valeur)){
+            const identification = "Salle"
+            afficherFormulaire(identification)
+        }
 
+        ajouter.addEventListener("click", () =>{  
+            zoneformulaire.style.display = "none";  
+        
+            coteLabel.innerHTML = ""
+            coteSelect.innerHTML = ""  
+            let enseignant = JSON.parse(localStorage.getItem('Enseign'));
+            let module = JSON.parse(localStorage.getItem('Module'));
+            let salle = JSON.parse(localStorage.getItem('Salle'));
+            let classe = JSON.parse(localStorage.getItem('Classe'));
+            let heureDebut = JSON.parse(localStorage.getItem('HeureDebut'));
+            let heureFin = JSON.parse(localStorage.getItem('HeureFin'));
+            let indice = JSON.parse(localStorage.getItem('Jour'));
+            let cour = {
+                        Enseign: enseignant.id,
+                        Module: module.id,
+                        Salle: salle.id,
+                        Classe: classe.id,
+                        HeureDebut: heureDebut.nom,
+                        HeureFin: heureFin.nom,
+                        jour : indice};
+            cours.push(cour)
+            console.log(valeur);
+            lundi.innerHTML = ""
+            mardi.innerHTML = ""
+            mercredi.innerHTML = ""
+            jeudi.innerHTML = ""
+            vendredi.innerHTML = ""
+            samedi.innerHTML = ""
 
+            planning(valeur, cours)
+            
+
+           
+        })
+            
+    });
+// }
+
+creationlisteDeroul()
+    
+
+// ajouter.addEventListener("click", () =>{  
+//     zoneformulaire.style.display = "none";  
+//     lundi.innerHTML = ""
+//     mardi.innerHTML = ""
+//     mercredi.innerHTML = ""
+//     jeudi.innerHTML = ""
+//     vendredi.innerHTML = ""
+//     samedi.innerHTML = ""
+//     coteLabel.innerHTML = ""
+//     coteSelect.innerHTML = ""  
+//     const enseignant = JSON.parse(localStorage.getItem('Enseign'));
+//     const module = JSON.parse(localStorage.getItem('Module'));
+//     const salle = JSON.parse(localStorage.getItem('Salle'));
+//     const classe = JSON.parse(localStorage.getItem('Classe'));
+//     const heureDebut = JSON.parse(localStorage.getItem('HeureDebut'));
+//     const heureFin = JSON.parse(localStorage.getItem('HeureFin'));
+
+//     const cour = {
+//             Enseign: enseignant.id,
+//             Module: module.id,
+//             Salle: salle.id,
+//             Classe: classe.id,
+//             HeureDebut: heureDebut.id,
+//             HeureFin: heureFin.id
+//             };
+//     cours.push(cour)
+//     planning(valeur)
+
+// })
+// 
