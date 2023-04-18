@@ -7,17 +7,17 @@ body{
 }
 
 #zone{
-    margin-top: 5x;
+    margin-top: 5px;
     width: 85%;
     height: 900px;
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
 
 }
+
 #zone #gauche{
-    background-color:rgba(64,61,62,255);
+    background-color: rgba(64,61,62,255);
     width: 25%;
     height: 900px;
 }
@@ -36,8 +36,8 @@ input{
 #EnseiSalClassMod{
     width: 85% ;
     height: 250px;
-    border: 1px solid black;
     display: flex;
+    position: relative;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,6 @@ input{
 .classEnseiSalClassMod{
     width: 45%;
     height: 110px ;
-    border: 1px solid black;
     margin-right: 2%;
     background-color: rgba(154,154,154,255);
     border-radius: 15px;
@@ -278,6 +277,14 @@ header{
     border: 1px solid grey;
 
 }
+
+/* #element1, #element2, #element3, #element4, #element5, #element6 {
+    display: flex;
+    po
+}
+ */
+
+
 .horaire {
     display: flex;
     align-items: center;

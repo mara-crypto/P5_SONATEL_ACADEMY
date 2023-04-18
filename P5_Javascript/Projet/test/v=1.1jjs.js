@@ -278,7 +278,6 @@ zoneformulaire.appendChild(form);
 const footer = document.createElement("footer")
 footer.id = "footer"
 footer.style.display = "flex"
-footer.style.flexDirection = "column"
 footer.style.justifyContent = "center"
 footer.style.alignItems = "center"
 zoneformulaire.appendChild(footer)
@@ -290,20 +289,15 @@ const coteSelect = document.createElement("div")
 coteSelect.id = "coteSelect"
 form.appendChild(coteSelect)
 
-const messageErreur = document.createElement("p");
-footer.appendChild(messageErreur);
-
-const conteneurAnnulerAjouter = document.createElement("div")
-footer.appendChild(conteneurAnnulerAjouter)
 const ajouter = document.createElement("button");
 ajouter.innerHTML = "Ajouter";
 ajouter.style.height = "30px"
-conteneurAnnulerAjouter.appendChild(ajouter)
+footer.appendChild(ajouter)
 
 const annuler = document.createElement("button");
 annuler.innerHTML = "Annuler";
 annuler.style.height = "30px"
-conteneurAnnulerAjouter.appendChild(annuler)
+footer.appendChild(annuler)
 
 
 function formulaire(identification, indice, valeur){
@@ -425,7 +419,6 @@ function formulaire(identification, indice, valeur){
               });
         }
         localStorage.setItem('Jour', JSON.stringify(indice));
-        
         if (enseignants.find(nomEnseign => nomEnseign.id === valeur)){
             console.log("mara")
             const nomEnseign = enseignants.find(nomEnseign => nomEnseign.id === valeur).nom ;
@@ -433,8 +426,6 @@ function formulaire(identification, indice, valeur){
             const item = {id: idEnseign, nom: nomEnseign};
             console.log(nomEnseign, idEnseign);
             localStorage.setItem('Enseign', JSON.stringify(item));
-            
-
         }
         if (modules.find(nomModule => nomModule.id === valeur)){
             console.log("mara")
@@ -486,25 +477,6 @@ function afficherFormulaire(identification, valeur){
     })
  }
 
-//  function recuperationDansLocalStorage(){
-//     let enseignant = JSON.parse(localStorage.getItem('Enseign'));
-//     let module = JSON.parse(localStorage.getItem('Module'));
-//     let salle = JSON.parse(localStorage.getItem('Salle'));
-//     let classe = JSON.parse(localStorage.getItem('Classe'));
-//     let heureDebut = JSON.parse(localStorage.getItem('HeureDebut'));
-//     let heureFin = JSON.parse(localStorage.getItem('HeureFin'));
-//     let indice = JSON.parse(localStorage.getItem('Jour'));
-//     let cour = {
-//                 Enseign: enseignant.id,
-//                 Module: module.id,
-//                 Salle: salle.id,
-//                 Classe: classe.id,
-//                 HeureDebut: heureDebut.nom,
-//                 HeureFin: heureFin.nom,
-//                 jour : (indice - 600).toString()};
-//     return cour
-//  }
-
 listeDeroulant.addEventListener("change", (event) => {
     const valeur = event.target.value
     lundi.innerHTML = ""
@@ -518,36 +490,36 @@ listeDeroulant.addEventListener("change", (event) => {
     zoneformulaire.style.display = "none"; 
     planning(valeur, cours)
 
-    var identification = ""
-
     if (enseignants.find(monobjet => monobjet.id === valeur)){
         const nomValeur = enseignants.find(monobjet => monobjet.id === valeur).nom
         document.getElementById("nomPlaning").textContent = "Planning : "+ nomValeur
-        identification = "Enseignant"
+        const identification = "Enseignant"
         afficherFormulaire(identification, valeur)
 
         
     }
     if (classes.find(monobjet => monobjet.id === valeur)){
-       identification = "Classe"
+        const identification = "Classe"
         const nomValeur = classes.find(monobjet => monobjet.id === valeur).nom
         document.getElementById("nomPlaning").textContent = "Planning : "+ nomValeur
         afficherFormulaire(identification, valeur)
     }
     if (modules.find(monobjet => monobjet.id === valeur)){
-        identification = "Module"
+        const identification = "Module"
         afficherFormulaire(identification, valeur)
     }
     if (salles.find(monobjet => monobjet.id === valeur)){
-         identification = "Salle"
+        const identification = "Salle"
         afficherFormulaire(identification, valeur)
     }
 
 
 
     ajouter.addEventListener("click", () =>{  
+        zoneformulaire.style.display = "none";  
     
-       
+        coteLabel.innerHTML = ""
+        coteSelect.innerHTML = ""  
         let enseignant = JSON.parse(localStorage.getItem('Enseign'));
         let module = JSON.parse(localStorage.getItem('Module'));
         let salle = JSON.parse(localStorage.getItem('Salle'));
@@ -563,50 +535,21 @@ listeDeroulant.addEventListener("change", (event) => {
                     HeureDebut: heureDebut.nom,
                     HeureFin: heureFin.nom,
                     jour : (indice - 600).toString()};
-       
+        cours.push(cour)
         console.log(valeur);
+        lundi.innerHTML = ""
+        mardi.innerHTML = ""
+        mercredi.innerHTML = ""
+        jeudi.innerHTML = ""
+        vendredi.innerHTML = ""
+        samedi.innerHTML = ""
+        // cour ={}
 
-        //filtrer par rapport au jours  tout les cours qui on le meme jours 
-        let jours = cours.filter(unJour => unJour.jour === cour.jour)
-
-        //je recupere tout les cours que l'enseignant fait dans ce meme jour
-        let enseigns = jours.filter(enseign => enseign.Enseign === cour.Enseign)
-
-        // l'heure de debut du nouveau cour choisit doit etre different a 
-        // l'heure de fin des cours du prof pour ce meme jour
-        enseigns.forEach(enseigns => {
-            if (enseigns.HeureDebut <= cour.HeureDebut < enseigns.HeureFin){
-                messageErreur.style.color = "red"
-                messageErreur.innerHTML = `l'enseignant ${cour.Enseign} n'est pas disponible de ${enseigns.HeureDebut} à ${enseigns.HeureFin}`;
-                afficherFormulaire(identification, valeur)   
-            }
-            else {
-                // mettre ce que on vient de faire dans une fonction et l'appeler
-            }
-            
-        })
-    
-
-        // cours.push(cour)
-        // lundi.innerHTML = ""
-        // mardi.innerHTML = ""
-        // mercredi.innerHTML = ""
-        // jeudi.innerHTML = ""
-        // vendredi.innerHTML = ""
-        // samedi.innerHTML = ""
-        // coteLabel.innerHTML = ""
-        // coteSelect.innerHTML = ""  
-        // zoneformulaire.style.display = "none";  
-        // planning(valeur, cours)
+        planning(valeur, cours)
         
 
         
     })
-    annuler.addEventListener("click", () =>{
-        zoneformulaire.style.display = "none";
-    })
-
-    
 
         
 });
