@@ -427,31 +427,27 @@ function formulaire(identification, indice, valeur){
         localStorage.setItem('Jour', JSON.stringify(indice));
         
         if (enseignants.find(nomEnseign => nomEnseign.id === valeur)){
-            console.log("mara")
             const nomEnseign = enseignants.find(nomEnseign => nomEnseign.id === valeur).nom ;
             const idEnseign = enseignants.find(nomEnseign => nomEnseign.id === valeur).id ;
             const item = {id: idEnseign, nom: nomEnseign};
-            console.log(nomEnseign, idEnseign);
+
             localStorage.setItem('Enseign', JSON.stringify(item));
             
 
         }
         if (modules.find(nomModule => nomModule.id === valeur)){
-            console.log("mara")
             const nomModule = modules.find(nomModule => nomModule.id === valeur).nom ;
             const idModule = modules.find(nomModule => nomModule.id === valeur).id ;
             const item = {id: idModule, nom: nomModule};
             localStorage.setItem('Module', JSON.stringify(item));
         }
         if (salles.find(nomSalle => nomSalle.id === valeur)){
-            console.log("mara")
             const nomSalle = salles.find(nomSalle => nomSalle.id === valeur).nom ;
             const idSalle = salles.find(nomSalle => nomSalle.id === valeur).id ;
             const item = {id: idSalle, nom: nomSalle};
             localStorage.setItem('Salle', JSON.stringify(item));
         }
         if (classes.find(nomClasse => nomClasse.id === valeur)){
-            console.log("mara")
             const nomClasse = classes.find(nomClasse => nomClasse.id === valeur).nom ;
             const idClasse = classes.find(nomClasse => nomClasse.id === valeur).id ;
             const item = {id: idClasse, nom: nomClasse};
@@ -477,7 +473,6 @@ function afficherFormulaire(identification, valeur){
     tabBoutonPlusDansJour.forEach(boutonPlus =>{
         boutonPlus.addEventListener("click", ()=>{
             idIndice = boutonPlus.id
-            console.log(idIndice)
             coteLabel.innerHTML = ""
             coteSelect.innerHTML = ""
             zoneformulaire.style.display = "block"
@@ -544,10 +539,12 @@ listeDeroulant.addEventListener("change", (event) => {
     }
 
 
+    // avant d'ajouter faut verifier d'abord si le proff est  disponible
 
+   
+
+   
     ajouter.addEventListener("click", () =>{  
-    
-       
         let enseignant = JSON.parse(localStorage.getItem('Enseign'));
         let module = JSON.parse(localStorage.getItem('Module'));
         let salle = JSON.parse(localStorage.getItem('Salle'));
@@ -563,53 +560,76 @@ listeDeroulant.addEventListener("change", (event) => {
                     HeureDebut: heureDebut.nom,
                     HeureFin: heureFin.nom,
                     jour : (indice - 600).toString()};
-       
-        console.log(valeur);
-
-        //filtrer par rapport au jours  tout les cours qui on le meme jours 
-        let jours = cours.filter(unJour => unJour.jour === cour.jour)
-
         //je recupere tout les cours que l'enseignant fait dans ce meme jour
-        let enseigns = jours.filter(enseign => enseign.Enseign === cour.Enseign)
+        let enseigns = cours.filter(enseign => enseign.Enseign === cour.Enseign)
+        console.log(enseigns)
+
+          // filtrer par rapport au jours  tout les cours qui on le meme jours 
+        let lesCoursDuProffAuMemeJour = enseigns.filter(unJour => unJour.jour === cour.jour)
+        console.log(lesCoursDuProffAuMemeJour);
 
         // l'heure de debut du nouveau cour choisit doit etre different a 
         // l'heure de fin des cours du prof pour ce meme jour
-        enseigns.forEach(enseigns => {
-            if (enseigns.HeureDebut <= cour.HeureDebut < enseigns.HeureFin){
-                messageErreur.style.color = "red"
-                messageErreur.innerHTML = `l'enseignant ${cour.Enseign} n'est pas disponible de ${enseigns.HeureDebut} à ${enseigns.HeureFin}`;
-                afficherFormulaire(identification, valeur)   
-            }
-            else {
-                // mettre ce que on vient de faire dans une fonction et l'appeler
-            }
-            
-        })
-    
 
-        // cours.push(cour)
-        // lundi.innerHTML = ""
-        // mardi.innerHTML = ""
-        // mercredi.innerHTML = ""
-        // jeudi.innerHTML = ""
-        // vendredi.innerHTML = ""
-        // samedi.innerHTML = ""
-        // coteLabel.innerHTML = ""
-        // coteSelect.innerHTML = ""  
-        // zoneformulaire.style.display = "none";  
-        // planning(valeur, cours)
+        console.log(cour);
         
+        const estDisponible = rechercheDisponibilite(lesCoursDuProffAuMemeJour, cour)
+        console.log(estDisponible);
+        if (estDisponible === true){
+            cours.push(cour)
+            lundi.innerHTML = ""
+            mardi.innerHTML = ""
+            mercredi.innerHTML = ""
+            jeudi.innerHTML = ""
+            vendredi.innerHTML = ""
+            samedi.innerHTML = ""
+            zoneformulaire.style.display = "none"; 
+            planning(valeur, cours) 
 
-        
+          
+        }
+        else{
+            messageErreur.style.color = "red"
+            messageErreur.innerHTML = `l'enseignant ${cour.Enseign} n'est pas disponible de ${cour.HeureDebut} à ${cour.HeureFin}`;
+            afficherFormulaire(identification, valeur) 
+            zoneformulaire.style.display = "block";
+          
+        }
     })
     annuler.addEventListener("click", () =>{
         zoneformulaire.style.display = "none";
-    })
-
-    
-
-        
+    })        
 });
+
+
+function rechercheDisponibilite(lesCoursDuProffAuMemeJour, cour){
+    lesCoursDuProffAuMemeJour.forEach(unCourDuProff => {
+        if ((unCourDuProff.HeureDebut <= cour.HeureDebut && cour.HeureDebut < unCourDuProff.HeureFin) || (unCourDuProff.HeureDebut < cour.HeureFin && cour.HeureFin <= unCourDuProff.HeureFin)){
+            return false
+        }
+    })
+    return true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 async function suggest(query) {
@@ -651,7 +671,6 @@ async function suggest(query) {
     if(query == ""){
         suggestions = []
     }
-    console.log(suggestions)
     return suggestions;
 
     
