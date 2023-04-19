@@ -560,20 +560,10 @@ listeDeroulant.addEventListener("change", (event) => {
                     HeureDebut: heureDebut.nom,
                     HeureFin: heureFin.nom,
                     jour : (indice - 600).toString()};
-        //je recupere tout les cours que l'enseignant fait dans ce meme jour
         let enseigns = cours.filter(enseign => enseign.Enseign === cour.Enseign)
-        console.log(enseigns)
-
-          // filtrer par rapport au jours  tout les cours qui on le meme jours 
         let lesCoursDuProffAuMemeJour = enseigns.filter(unJour => unJour.jour === cour.jour)
-        console.log(lesCoursDuProffAuMemeJour);
-
-        // l'heure de debut du nouveau cour choisit doit etre different a 
-        // l'heure de fin des cours du prof pour ce meme jour
-
-        console.log(cour);
-        
         const estDisponible = rechercheDisponibilite(lesCoursDuProffAuMemeJour, cour)
+
         console.log(estDisponible);
         if (estDisponible === true){
             cours.push(cour)
@@ -584,16 +574,14 @@ listeDeroulant.addEventListener("change", (event) => {
             vendredi.innerHTML = ""
             samedi.innerHTML = ""
             zoneformulaire.style.display = "none"; 
-            planning(valeur, cours) 
-
-          
+            planning(valeur, cours)    
         }
         else{
             messageErreur.style.color = "red"
             messageErreur.innerHTML = `l'enseignant ${cour.Enseign} n'est pas disponible de ${cour.HeureDebut} à ${cour.HeureFin}`;
             afficherFormulaire(identification, valeur) 
             zoneformulaire.style.display = "block";
-          
+            messageErreur.innerHTML = ""   
         }
     })
     annuler.addEventListener("click", () =>{
@@ -601,33 +589,22 @@ listeDeroulant.addEventListener("change", (event) => {
     })        
 });
 
-
-function rechercheDisponibilite(lesCoursDuProffAuMemeJour, cour){
+function rechercheDisponibilite(lesCoursDuProffAuMemeJour, cour) {
+    let nondispo = 0;
     lesCoursDuProffAuMemeJour.forEach(unCourDuProff => {
-        if ((unCourDuProff.HeureDebut <= cour.HeureDebut && cour.HeureDebut < unCourDuProff.HeureFin) || (unCourDuProff.HeureDebut < cour.HeureFin && cour.HeureFin <= unCourDuProff.HeureFin)){
-            return false
-        }
-    })
-    return true
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      let x = unCourDuProff.HeureDebut;
+      let y = unCourDuProff.HeureFin;
+      if ((x < cour.HeureFin && cour.HeureDebut < y) || (x < cour.HeureFin && cour.HeureFin <= y) || (cour.HeureDebut < y && x <= cour.HeureDebut) || (cour.HeureDebut === x) || (cour.HeureFin === y)) {
+        nondispo += 1;
+      }      
+    });
+    if (nondispo === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
 
 
 
@@ -672,10 +649,8 @@ async function suggest(query) {
         suggestions = []
     }
     return suggestions;
-
-    
-
 }
+
 
 cherche.addEventListener('input', async (e) => {
     tabclassEnseiSalClassMod.forEach(elementTab => {
@@ -714,8 +689,7 @@ cherche.addEventListener('input', async (e) => {
         })
         listeDeroulant.style.display = "block";
         suggestionsContainer.style.display = "none"
-    }
- 
+    } 
 })
 
 
@@ -755,4 +729,7 @@ boutonSwitch.addEventListener("click", () => {
     } else {
         activerModeSombre();
     }
-});
+})
+
+
+
