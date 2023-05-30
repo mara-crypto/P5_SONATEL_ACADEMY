@@ -311,7 +311,7 @@ header{
 }
 
 #zoneformulaire{
-    position: absolute;
+    b: absolute;
     z-index: 999;
     width: 45%;
     height: 550px;

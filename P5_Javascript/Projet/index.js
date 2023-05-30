@@ -577,11 +577,12 @@ listeDeroulant.addEventListener("change", (event) => {
             planning(valeur, cours)    
         }
         else{
+            messageErreur.innerHTML = ""
             messageErreur.style.color = "red"
             messageErreur.innerHTML = `l'enseignant ${cour.Enseign} n'est pas disponible de ${cour.HeureDebut} à ${cour.HeureFin}`;
             afficherFormulaire(identification, valeur) 
             zoneformulaire.style.display = "block";
-            messageErreur.innerHTML = ""   
+              
         }
     })
     annuler.addEventListener("click", () =>{
@@ -609,6 +610,27 @@ function rechercheDisponibilite(lesCoursDuProffAuMemeJour, cour) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
 async function suggest(query) {
     var suggestions = []
     enseignants.forEach(objetEnseignant => {

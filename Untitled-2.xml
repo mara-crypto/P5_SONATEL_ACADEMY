@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramme>
+  <classe nom="Personne">
+    <attribut nom="nom" type="String">
+    <attribut nom="prenom" type="String"/>
+    <attribut nom="age" type="int"/>
+  </classe>
+  <classe nom="Employé">
+    <attribut nom="numEmployé" type="int"/>
+    <association nom="travailleSur" type="Projet" multiplicité="0..*"/>
+  </classe>
+  <classe nom="Manager">
+    <attribut nom="numManager" type="int"/>
+    <association nom="gère" type="Employé" multiplicité="0..*"/>
+  </classe>
+  <classe nom="Projet">
+    <attribut nom="nom" type="String"/>
+    <attribut nom="description" type="String"/>
+    <association nom="travailléSur" type="Employé" multiplicité="0..*"/>
+  </classe>
+</diagramme>
