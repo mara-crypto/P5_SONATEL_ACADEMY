@@ -1,0 +1,76 @@
+//creer un dossier pour le projet 
+
+
+yarn init //  pour le fichier package.json
+
+// ouvrir le fichier package.json et y ajouter
+// "type": "module", ca permettra de gerer le module validator
+
+yarn add validator  //  telecharger la bibliotheque dont a besoin pour notre cas validator
+
+// creer un fichier js et mettre le code 
+
+import validator from 'validator';
+const email = 'test@example';
+
+if (validator.isEmail(email)) {
+  console.log('L\'adresse e-mail est valide.');
+} else {
+  console.log('L\'adresse e-mail est invalide.');
+}
+
+
+apres faire node app.js
+et voir le resultat
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+// avec npm
+
+on a utiliser ici vite js qui est outil javascript comme npm init pour gerer les dependance pour notre applicaqtion et en  creer le dossier de notre projet avec notre propre serveur en local pour executer le code
+
+npm create vite@latest 
+
+//on va importer le module moment dans le dossier de notre projet avec
+npm install moment
+
+// apres on modifie le fichier js et html a notre guiss et ecrire notre code 
+
+
+import './style.css' ;
+import moment from 'moment';
+
+function updateCountdown(date) {
+    const targetDate = moment(date); // Date cible du compte à rebours
+  const currentDate = moment(); // Date actuelle
+
+  const diff = targetDate.diff(currentDate); // Différence entre les deux dates en millisecondes
+
+  const duration = moment.duration(diff); // Convertit la différence en un objet de durée
+
+  const days = Math.floor(duration.asDays()); // Nombre de jours complets dans la durée
+  const hours = duration.hours();
+  const minutes = duration.minutes();
+  const seconds = duration.seconds();
+
+
+  const countdownElement = document.getElementById('countdown');
+  countdownElement.textContent = `Compte à rebours : ${days} jours, ${hours} heures, ${minutes} minutes, ${seconds} secondes`;
+}
+
+// Met à jour le compte à rebours toutes les secondes
+setInterval(updateCountdown('2025-01-01'), 1000);
+
+// Appel initial pour éviter un délai d'une seconde avant le premier affichage
+updateCountdown('2025-01-01');
+
+
+
+
+
+
