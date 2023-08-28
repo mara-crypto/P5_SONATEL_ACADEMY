@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+
+</head>
+<body style="display:flex;flex-direction:column">
+
+    <div class="container mt-5">
+        <form>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" required>
+                </div>
+                <div class="col">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="nom" name="nom" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-4">
+                    <label for="jour" class="form-label">Jour de naissance</label>
+                    <select class="form-select" id="jour" name="jour" required>
+                        <!-- Options pour le jour -->
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="mois" class="form-label">Mois de naissance</label>
+                    <select class="form-select" id="mois" name="mois" required>
+                        <!-- Options pour le mois -->
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="annee" class="form-label">Année de naissance</label>
+                    <select class="form-select" id="annee" name="annee" required>
+                        <!-- Options pour l'année -->
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sexe</label>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexe" id="homme" value="homme" required>
+                            <label class="form-check-label" for="homme">Homme</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexe" id="femme" value="femme" required>
+                            <label class="form-check-label" for="femme">Femme</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="telephone" class="form-label">Téléphone</label>
+                <input type="tel" class="form-control" id="telephone" name="telephone" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Statut actuel</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="etudiant" name="statut[]" value="Etudiant">
+                    <label class="form-check-label" for="etudiant">Étudiant</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="employer" name="statut[]" value="Employer">
+                    <label class="form-check-label" for="employer">Employé</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="stagiaire" name="statut[]" value="Stagiaire">
+                    <label class="form-check-label" for="stagiaire">Stagiaire</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+        </form>
+    </div>
+
+    <% if (results.length > 0) { %>
+        <div style="position:relative">
+        <table class="table table-hover" style="margin-top: 30px;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Hotel</th>
+                    <th scope="col">ville</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">localisation</th>
+                    <th scope="col">Modifier</th>
+                    <th scope="col">Supprimer</th>
+
+                </tr>
+            </thead>
+            <tbody >
+               
+                    <% for (let i = 0; i <  results.length; i++) { %>
+                        <tr >
+                            <th scope="row"><%= i+1 %></th>
+                            <td><%= results[i].hotel %></td>
+                            <td><%= results[i].ville %></td>
+                            <td><%= results[i].Prix %></td>
+                            <td><%= results[i].localisation %></td>
+                            <td><img class="modl" style="height:25px;width:25px; cursor:pointer" src="img/modifier.png" alt="smodi"></td>
+                            <td><img class="suprl" style="height:25px;width:25px ;cursor:pointer" src="img/sup.png" alt="sup"></td>
+                        </tr>
+                        
+                    <% } %>
+              
+            </tbody>
+        </table>
+        <form method="POST" action="/api/update" class="form" id="form" style="position: absolute; top: 5px; left: 100px; z-index: 2; background: white; border-radius: 10px; display: none; height: auto; border: 2px solid cadetblue; padding: 20px;">
+            
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+                <!-- <label for="id" style="margin-left: 10px; width: 120px;">id</label> -->
+                <input type="hidden" name="ide" id="ide" class="form-control" style="border-radius: 16px; background: white; padding: 8px; border: 1px solid #ccc; flex-grow: 1;"  >
+            </div>
+            
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+                <label for="hotel" style="margin-left: 10px; width: 120px;">Hôtel</label>
+                <input type="text" name="hotele" id="hotele" class="form-control" style="border-radius: 16px; background: white; padding: 8px; border: 1px solid #ccc; flex-grow: 1;" required>
+            </div>
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+                <label for="Prix" style="margin-left: 10px; width: 120px;">Prix</label>
+                <input type="text" name="Prixe" id="Prixe" class="form-control" style="border-radius: 16px; background: white; padding: 8px; border: 1px solid #ccc; flex-grow: 1;" required>
+            </div>
+
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+                <label for="ville" style="margin-left: 10px; width: 120px;">Ville</label>
+                <input type="text" name="villee" id="villee" class="form-control" style="border-radius: 16px; background: white; padding: 8px; border: 1px solid #ccc; flex-grow: 1;" required>
+            </div>
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 15px; align-items: center;">
+                <label for="localisation" style="margin-left: 10px; width: 120px;">Localisation</label>
+                <input type="text" name="localisatione" id="localisatione" class="form-control" style="border-radius: 16px; background: white; padding: 8px; border: 1px solid #ccc; flex-grow: 1;" required>
+            </div>
+
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 15px;">
+                <button type="submit" class="btn btn-primary" style="border-radius: 16px; max-width: fit-content; margin-left: inherit; background-color: cadetblue; color: white; border: none; padding: 8px 20px; cursor: pointer;">Valider</button>
+                <button type="button" id="anulM" class="btn btn-secondary annuler" style="border-radius: 16px; max-width: fit-content; background-color: #ccc; color: black; border: none; padding: 8px 20px; cursor: pointer; margin-right: 10px;">Annuler</button>
+            </div>
+        </form>
+        
+        <% } %>
+
+    </div>
+    <!-- quant on utilise $.ajax  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        const supprimerElements = document.querySelectorAll('.suprl');
+        
+        supprimerElements.forEach((element) => {
+            element.addEventListener('click', () => {
+                const id = element.parentElement.parentElement.firstElementChild.innerText;
+                console.log(id);
+                
+                const confirmation = confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');
+                if (confirmation) {
+                    supprimerChambre(id);
+                }
+                location.reload();
+            });
+        });
+        
+        function supprimerChambre(id) {
+            $.ajax({
+                url: '/api/suprimer/:id',
+                method: 'DELETE',
+                data: { id: id }, 
+                success: function(response) {
+                    console.log(response);
+                    
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
+        }
+        
+
+        const modifierU=document.querySelectorAll('.modl')
+        modifierU.forEach(element=>{
+            element.addEventListener('click',()=>{
+                const row = element.parentElement.parentElement;
+                const id = row.firstElementChild.innerText;
+                console.log(id);
+        
+                const hotel = row.children[1].innerText;
+                const ville = row.children[2].innerText;
+                const prix = row.children[3].innerText;
+                const localisation = row.children[4].innerText;
+                console.log(localisation)
+                const formulaire=document.querySelector('.form')
+                formulaire.style.display='block'
+                const anuler=document.querySelector('#anulM')
+
+                anuler.addEventListener('click',()=>{
+                    formulaire.style.display='none'
+                })
+                const hot=document.querySelector('#hotele')
+                const villee=document.querySelector('#villee')
+                const prixe=document.querySelector('#Prixe')
+                const localisatione=document.querySelector('#localisatione')
+                const ide=document.querySelector('#ide')
+                console.log(hot)
+                hot.value=hotel
+                hot.textcontent=hotel
+                ide.value=id
+                ide.textcontent=id
+                villee.value=ville
+                villee.textcontent=ville
+                prixe.value=prix
+                prixe.textContent=prix
+                localisatione.value=localisation
+
+                localisation.textcontent=localisation
+                console.log(id,hotel,ville,prix,localisation)
+             
+            })
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
