@@ -1,0 +1,56 @@
+
+Bien sûr ! Voici un résumé de chaque partie du cours "L'essentiel de NoSQL" :
+
+Chapitre 1. S'initier à NoSQL
+Partie 1 : Appréhender la différence avec le modèle relationnel
+Dans cette partie, on découvre les principes fondamentaux du NoSQL. Le NoSQL propose de nouveaux choix en matière de structuration des données, tels que le stockage en JSON, les bases de données orientées colonnes, les graphes ou les bases de données clé-valeur. Il est particulièrement adapté aux environnements Big Data et offre plus d'agilité en développement tout en permettant une meilleure élasticité du système.
+
+Partie 2 : Comprendre les modèles de données
+On explore les différentes catégories de bases de données NoSQL en fonction de leurs modèles de données. Il y a le modèle clé-valeur, adapté pour le stockage simple et performant de paires clé-valeur sans relation. Le modèle document, qui permet de stocker des données structurées en JSON. Le modèle wide column, qui divise les informations en colonnes pour une meilleure structuration. Et enfin, le modèle graphe, utile pour représenter et traverser des graphes, particulièrement utilisé dans les réseaux sociaux.
+
+Partie 3 : Choisir une base de données NoSQL
+Cette partie aborde les critères à prendre en compte lors du choix entre une base de données relationnelle et NoSQL. Les bases de données relationnelles peuvent monter en charge, mais nécessitent des connaissances techniques avancées. Les bases de données NoSQL permettent une montée en charge plus aisée, mais certaines nécessitent tout de même des compétences d'administration. Le choix dépendra des besoins du projet, notamment s'il nécessite une base de données centralisée ou spécifique à chaque module.
+
+Partie 4 : Comprendre la catégorie NewSQL
+On se penche sur la catégorie NewSQL, qui propose une approche hybride en combinant les avantages du SQL relationnel avec la distribution facilitée des bases de données NoSQL. Certaines bases de données NewSQL cherchent à distribuer les données tout en maintenant les propriétés transactionnelles du SQL, mais cela peut être plus complexe que les bases de données NoSQL.
+
+Chapitre 2. Aborder les bases du modèle clé-valeur
+Partie 1 : Découvrir le modèle clé-valeur
+Le modèle clé-valeur est le plus simple des modèles de bases de données NoSQL. Il consiste en un entrepôt de paires clé-valeur, où la clé est unique dans l'espace de clé. Les bases de données clé-valeur sont similaires à des tableaux de hachage, ce qui permet des accès rapides aux données. Ce modèle est adapté aux cas de stockage de données simples et à hautes performances.
+
+Partie 2 : Comprendre les principes de fonctionnement de Redis
+On se concentre sur Redis, une base de données clé-valeur populaire. Redis est un système de stockage en mémoire, ce qui lui confère une grande rapidité. Il permet de stocker différents types de données, tels que des chaînes, des listes, des ensembles, et offre des fonctionnalités avancées comme les transactions et la réplication.
+
+Partie 3 : Manipuler les données avec Redis
+Dans cette partie, on apprend comment manipuler les données avec Redis en utilisant les commandes adaptées pour ajouter, récupérer, mettre à jour et supprimer des données. On découvre également des fonctionnalités avancées telles que l'expiration des clés, les transactions multi-étapes et la gestion des ensembles et des listes.
+
+Partie 4 : Découvrir d'autres bases de données clé-valeur
+On explore d'autres bases de données clé-valeur, comme Cassandra et Amazon DynamoDB, en mettant l'accent sur leurs spécificités et leurs cas d'utilisation pertinents. Cassandra est très scalable et adaptée aux applications distribuées, tandis que DynamoDB est un service géré par Amazon offrant une haute disponibilité et une grande facilité d'utilisation.
+
+Chapitre 3. S'initier au modèle document
+Partie 1 : Comprendre le modèle document
+Le modèle document permet de stocker des données structurées en JSON ou dans d'autres formats similaires. Cette partie explique comment fonctionne ce modèle, ses avantages par rapport au modèle relationnel, et ses cas d'utilisation pertinents, notamment pour les applications web, mobiles et les environnements Big Data.
+
+Partie 2 : Découvrir MongoDB
+MongoDB est une base de données document très populaire. On explore ses caractéristiques, son langage de requête, et on apprend à manipuler les données avec MongoDB, notamment en effectuant des opérations de lecture, d'écriture, de mise à jour et de suppression.
+
+Partie 3 : Utiliser des opérations avancées avec MongoDB
+On se penche sur des fonctionnalités avancées de MongoDB, telles que les index, l'agrégation de données, la réplication et la gestion de la haute disponibilité. Ces fonctionnalités permettent d'optimiser les performances, la disponibilité et la sécurité des données.
+
+Partie 4 : Explorer d'autres bases de données document
+On découvre d'autres bases de données document, comme Couchbase et RavenDB, en mettant en avant leurs particularités et leurs domaines d'application pertinents. Couchbase offre une grande évolutivité et une répartition automatique des données, tandis que RavenDB est une base de données document transactionnelle offrant des fonctionnalités ACID.
+
+Chapitre 4. Se familiariser avec Gremlin et les bases de données graphe
+Partie 1 : Se familiariser avec Gremlin
+Cette partie présente les bases de données graphe, une catégorie spécifique de bases de données. Le graphe permet de représenter et de traverser des graphes relationnels, utiles pour exprimer des parcours de nœuds, comme dans les réseaux sociaux ou pour résoudre des problèmes de chemins optimaux. On découvre également le langage Gremlin, qui est utilisé pour manipuler des données dans les bases de données graphe.
+
+Partie 2 : Découvrir Neo4j
+Neo4j est une base de données graphe très populaire. On explore ses caractéristiques, son langage de requête Cypher, et on apprend à manipuler les données avec Neo4j en réalisant des parcours de graphes, des recherches et des mises à jour.
+
+Partie 3 : Utiliser des bases de données graphe distribuées
+On aborde les bases de données graphe distribuées, qui permettent de gérer des graphes de grande envergure et de réaliser des parcours de graphes massivement parallèles. Ces bases de données offrent une grande évolutivité et une répartition efficace des données pour des performances optimales.
+
+Partie 4 : Explorer d'autres bases de données graphe
+On découvre d'autres bases de données graphe, telles que DataStax Enterprise Graph et Amazon Neptune, en mettant en évidence leurs fonctionnalités et leurs avantages pour divers cas d'utilisation. DataStax Enterprise Graph est un graphe distribué avec une compatibilité Apache TinkerPop, tandis qu'Amazon Neptune est une base de données graphe entièrement gérée par AWS.
+
+J'espère que ce résumé vous sera utile pour revoir les points clés du cours "L'essentiel de NoSQL" !

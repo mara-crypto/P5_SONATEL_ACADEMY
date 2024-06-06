@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<objets>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Voiture</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Scooter</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Télévision</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Pantalon</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Guitare</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Stylo</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Téléphone</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Skate</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Appareil photo</nom>
+    <couleur>Or</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Bleu</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Vert</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Noir</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Orange</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Jaune</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Gris</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Rouge</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Rose</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Blanc</couleur>
+  </objet>
+  <objet identifiant="O1">
+    <nom>Chaise</nom>
+    <couleur>Or</couleur>
+  </objet>
+</objets>

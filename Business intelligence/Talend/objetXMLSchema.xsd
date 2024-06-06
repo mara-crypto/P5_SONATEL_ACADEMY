@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- ROOT TAG -->
+    <xsd:element name="objets" type="t_objets" />
+
+    <!-- OBJETS TAG -->
+    <xsd:complexType name="t_objets">
+        <xsd:sequence>
+	    <xsd:element name="objet" type="t_objet" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- OBJET TAG -->
+    <xsd:complexType name="t_objet">
+        <xsd:sequence>
+            <xsd:element name="nom" type="xsd:string" />
+            <xsd:element name="couleur" type="xsd:string" />
+        </xsd:sequence>
+
+        <xsd:attribute name="identifiant" type="xsd:string" use="required" />
+    </xsd:complexType>
+</xsd:schema>
